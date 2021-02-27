@@ -57,7 +57,7 @@
                             <a href="#" onclick="remover('{{ route('front.destroy', $prod->id) }}');" class="btn btn-sm btn-danger">Apagar</a>
                         </td>
                     </tr>
-                {{-- @endforeach --}}
+                @endforeach
             </tbody>
         </table>
     </div>

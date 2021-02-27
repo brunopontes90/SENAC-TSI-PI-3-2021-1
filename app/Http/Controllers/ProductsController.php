@@ -11,7 +11,7 @@ class ProductsController extends Controller
         return view('front.index');
     }
     public function products(){
-        return view('front.products');
+        return view('front.products')->with('product', Product::all());
     }
     public function create(){
         return view('front.create');
