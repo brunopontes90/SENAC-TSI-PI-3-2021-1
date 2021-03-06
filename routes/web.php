@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,15 @@ Route::post('/front/update/{product}', [ProductsController::class, 'update'])->n
 Route::get('/front/destroy/{product}', [ProductsController::class, 'destroy'])->name('front.destroy');
 
 
+//ROTA DO INDEX
+Route::get('/category', [CategoriesController::class, 'index'])->name('category.index');
+//RODA CRIAR CATEGORIA
+Route::get('/category/create', [CategoriesController::class, 'create'])->name('category.create');
+//ROTA SALVAR NO BANCO
+Route::post('/category/store', [CategoriesController::class, 'store'])->name('category.store');
+//ROTA DELETAR CATEGORIA
+Route::get('/category/destroy/{category}', [CategoriesController::class, 'destroy'])->name('category.destroy');
+//ROTA EDITAR CATEGORIA
+Route::get('/category/edit/{category}', [CategoriesController::class, 'edit'])->name('category.edit');
+//ROTA ATUALIZAR CATEGORIA
+Route::post('/category/update/{category}', [CategoriesController::class, 'update'])->name('category.update');
