@@ -16,10 +16,15 @@
                     <span class="form-label fs-5 text-uppercase">Nome:</span>
                     <input type="text" name="name" class="form-control" required>
                 </div>
-
-                <div class="row mt-4">
-                    <button type="submit" class="btn btn-success btn-lg text-uppercase">Salvar</button>
+                <div class="d-flex justify-content-around">
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-success btn-lg text-uppercase">Salvar</button>
+                    </div>
+                    <div class="mt-4">
+                        <a href="{{Route('category.index')}}" class="btn btn-dark btn-lg text-uppercase">Voltar</a>
+                    </div>
                 </div>
+
             </form>
         </div>
 

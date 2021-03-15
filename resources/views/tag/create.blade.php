@@ -8,16 +8,20 @@
     <body>
         <h1 class="text-center text-muted text-uppercase mt-3">Criar Tag</h1>
 
-        <div class="row shadow p-3 mb-5 bg-white rounded">
+        <div class="container mt-5" class="row shadow p-3 mb-5 bg-white rounded">
             <form method="POST" action="{{route('tag.store')}}">
                 @csrf
                 <div class="row">
                     <span class="form-label fs-5 text-uppercase">Nome:</span>
                     <input type="text" name="name" class="form-control" required>
                 </div>
-
-                <div class="row mt-4">
-                    <button type="submit" class="btn btn-success text-uppercase">Salvar</button>
+                <div class="d-flex justify-content-around">
+                    <div class="row mt-4">
+                        <button type="submit" class="btn btn-success text-uppercase">Salvar</button>
+                    </div>
+                    <div class="mt-4">
+                        <a href="{{Route('tag.index')}}" class="btn btn-dark text-uppercase">Voltar</a>
+                    </div>
                 </div>
 
             </form>

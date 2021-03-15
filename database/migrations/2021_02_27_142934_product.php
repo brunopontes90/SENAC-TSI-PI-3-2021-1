@@ -18,8 +18,8 @@ class Product extends Migration
             $table->string('name');
             $table->string('desc');
             $table->decimal('price', 6, 2);
-            $table->charset = 'utf-3';
-            $table->collattion = 'utf8_unicode_ci';
+            //$table->charset = 'utf-3';
+            //$table->collattion = 'utf8_unicode_ci';
             $table->timestamps();
         });
     }

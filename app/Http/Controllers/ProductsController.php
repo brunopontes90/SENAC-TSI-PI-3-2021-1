@@ -8,34 +8,37 @@ use App\Models\Product;
 class ProductsController extends Controller
 {
     public function index(){
-        return view('front.index');
+        return view('product.index')->with('products', Product::all());
     }
+    /*
     public function products(){
-        return view('front.products')->with('product', Product::all());
+        return view('product.products')->with('product', Product::all());
     }
+    */
     public function create(){
-        return view('front.create');
+        return view('product.create');
     }
 
     public function store(Request $request){
         Product::create($request->all());
         session()->flash('Success', 'Produto cadastrado com sucesso');
-        return redirect(route('front.products'));
+        return redirect(route('product.index'));
     }
 
     public function edit(Product $product){
-        return view('front.edit')->with('front', $product);
+        return view('product.edit')->with('product', $product);
     }
 
-    public function destroy(Product $product){
-        $product->delete();
-        session()->flash('success', 'Produto deletado com sucesso!');
-        return redirect(route('front.products'));
-    }
+    //public function update(Product $product, Resquest $request)
 
-    public function update(Product $product, Resquest $request){
+    public function update(Request $request, Product $product){
         $product->update($request->all());
         session()->flash('success', 'Produto alterado com sucesso!');
-        return redirect(route('front.products'));
+        return redirect(route('product.index'));
+    }
+        public function destroy(Product $product){
+        $product->delete();
+        session()->flash('success', 'Produto deletado com sucesso!');
+        return redirect(route('product.index'));
     }
 }
