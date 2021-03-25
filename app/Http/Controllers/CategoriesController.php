@@ -22,7 +22,7 @@ class CategoriesController extends Controller
 
     public function destroy(Category $category){
         $category->delete();
-        session()->flash('success','Categoria apagadas com sucesso!');
+        session()->flash('success','Categoria apagada com sucesso!');
         return redirect(route('category.index')); //RETORNA PARA A TELA DE PRODUTO
 }
 
@@ -35,5 +35,9 @@ class CategoriesController extends Controller
             $category->update($request->all());
             session()->flash('success','Categoria alterado com sucesso!');
             return redirect(route('category.index')); //RETORNA PARA A TELA DE PRODUTO
+    }
+
+    public function show(Category $category){
+
     }
 }

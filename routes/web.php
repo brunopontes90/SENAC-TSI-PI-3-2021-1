@@ -18,7 +18,7 @@ use App\Http\Controllers\TagController;
 require __DIR__.'/auth.php';
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Route::get('/dashboard', function () {
@@ -26,6 +26,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
-Route::resource('/product', ProductsController::class);
-Route::resource('/category', CategoriesController::class);
+Route::resource('/product', ProductsController::class)->middleware(['auth']);
+Route::resource('/category', CategoriesController::class)->middleware(['auth']);
 Route::resource('/tag', TagController::class)->middleware(['auth']);

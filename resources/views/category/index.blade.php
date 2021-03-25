@@ -45,7 +45,11 @@
                         <td class="text-uppercase">
                             <a href="#" class="btn btn-sm btn-success">Visualizar</a>
                             <a href="{{route('category.edit',$cat->id)}}" class="btn btn-sm btn-warning">Editar</a>
-                            <a href="#" onclick="remover('{{route('category.destroy', $cat->id)}}');" class="btn btn-sm btn-danger">Apagar</a>
+                            <form class="d-inline" method="POST" action="{{ route('category.destroy', $cat->id) }}" onsubmit="return remover();">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger">Apagar</button>
+                            </form>
                         </td>
                         </tr>
                     @endforeach

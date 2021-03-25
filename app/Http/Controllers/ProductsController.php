@@ -41,4 +41,8 @@ class ProductsController extends Controller
         session()->flash('success', 'Produto deletado com sucesso!');
         return redirect(route('product.index'));
     }
+
+    public function show(Product $product){
+
+    }
 }

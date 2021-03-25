@@ -10,6 +10,7 @@
     <div class="row shadow p-3 mb-5 bg-white rounded">
         <form method="POST" action="{{ Route('category.update', $category->id) }}">
             @csrf
+            @method('PUT')
             <div class="row">
                 <span class="form-label text-uppercase fs-5">Nome:</span>
                 <input type="text" name="name" class="form-control" value="{{ $category->name }}">

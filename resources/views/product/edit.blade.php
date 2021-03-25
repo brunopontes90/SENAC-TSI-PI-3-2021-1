@@ -12,6 +12,7 @@
     <div class="container mt-5" class="row shadow p-3 mb-5 bg-white rounded">
     <h1>Edita produto</h1>
         <form method="POST" action="{{ Route('product.update', $product->id) }}">
+            @method('PUT')
             @csrf
             <div class="row">
                 <span class="form-label text-uppercase fs-5">Nome:</span>
