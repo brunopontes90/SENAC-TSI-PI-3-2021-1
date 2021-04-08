@@ -51,4 +51,8 @@ class TagController extends Controller
         session()->flash('success','Tag apagadas com sucesso!');
         return redirect(route('tag.index')); //RETORNA PARA A TELA DE TAG
     }
+
+    public function trash(){
+        return view('tag.trash')->with('tags', Tag::onlyTrashed()->get());
+    }
 }

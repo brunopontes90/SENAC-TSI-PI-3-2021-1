@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-        <title>Lista de Categorias</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/bootstrap.js"></script>
+        <title>Lixeira de Categorias</title>
 
         <script>
             function remover(route){
@@ -22,7 +22,7 @@
 
         @endif
 
-        <h1 class="text-center text-uppercase text-muted mb-5">Lista de categorias</h1>
+        <h1 class="text-center text-uppercase text-muted mb-5">Lixeira de Categorias</h1>
        <div class="row shadow p-3 mb-5 bg-white rounded">
         <div class="d-flex justify-content-end">
             <a href="{{route('category.create')}}" class="btn btn-lg btn-primary mb-4 text-uppercase">Criar Categoria</a>

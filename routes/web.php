@@ -29,3 +29,6 @@ Route::get('/dashboard', function () {
 Route::resource('/product', ProductsController::class)->middleware(['auth']);
 Route::resource('/category', CategoriesController::class)->middleware(['auth']);
 Route::resource('/tag', TagController::class)->middleware(['auth']);
+Route::get('/trash/product', [ProductsController::class, 'trash'])->name('product.trash');
+Route::get('/trash/category', [CategoriesController::class, 'trash'])->name('category.trash');
+Route::get('/trash/tag', [TagsController::class, 'trash'])->name('tag.trash');

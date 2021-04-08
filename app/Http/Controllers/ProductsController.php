@@ -45,4 +45,8 @@ class ProductsController extends Controller
     public function show(Product $product){
 
     }
+
+    public function trash(){
+        return view('product.trash')->with('products', Product::onlyTrashed()->get());
+    }
 }

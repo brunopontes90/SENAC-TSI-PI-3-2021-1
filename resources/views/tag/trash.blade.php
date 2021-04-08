@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="./css/bootstrap.css">
         <script src="./js/bootstrap.js"></script>
-        <title>Lista de Tags</title>
+        <title>Lixeira de Tags</title>
 
         <script>
             function remover(){
@@ -20,7 +20,7 @@
 
         @endif
 
-        <h1 class="text-uppercase text-muted text-center">Lista de tags</h1>
+        <h1 class="text-uppercase text-muted text-center">Lixeira de Tags</h1>
 
         <div class="row shadow p-3 mb-5 bg-white rounded">
             <div class="d-flex justify-content-end mt-2">

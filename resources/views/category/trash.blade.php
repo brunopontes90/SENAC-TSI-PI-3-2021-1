@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <script src="js/bootstrap.js"></script>
-        <title>Lista de Produtos</title>
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <script src="/js/bootstrap.js"></script>
+        <title>Lixeira de Produtos</title>
 
         <script>
             function remover(route){
@@ -24,7 +24,7 @@
                 </div>
             @endif
 
-            <h1 class="text-uppercase text-muted text-center">Lista de produtos</h1>
+            <h1 class="text-uppercase text-muted text-center">Lixeira de produtos</h1>
 
             <div class="row shadow p-3 mb-5 bg-white rounded">
                 <div class="d-flex justify-content-end mt-2">

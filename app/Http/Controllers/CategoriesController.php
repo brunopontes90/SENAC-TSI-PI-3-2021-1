@@ -40,4 +40,8 @@ class CategoriesController extends Controller
     public function show(Category $category){
 
     }
+
+    public function trash(){
+        return view('category.trash')->with('categories', Category::onlyTrashed()->get());
+    }
 }
