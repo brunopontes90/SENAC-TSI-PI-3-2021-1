@@ -12,7 +12,7 @@
     @include('layouts.menu')
     <div class="container mt-5" class="row shadow p-3 mb-5 bg-white rounded">
     <h1>Edita produto</h1>
-        <form method="POST" action="{{ Route('product.update', $product->id) }}">
+        <form method="POST" action="{{ Route('product.update', $product->id) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="row">
@@ -41,6 +41,10 @@
                 </select>
             </div>
 
+            <div class="row">
+                <span class="form-label fs-5 text-uppercase mt-3">Imagem:</span>
+                <input type="file" name="image" class="form-control" required>
+            </div>
 
             <div class="d-flex justify-content-around">
                 <div class="mt-4">

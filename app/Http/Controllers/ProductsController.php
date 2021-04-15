@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\Category;
+
 
 class ProductsController extends Controller
 {
@@ -18,9 +20,27 @@ class ProductsController extends Controller
     }
 
     public function store(Request $request){
-        Product::create($request->all());
-        session()->flash('Success', 'Produto cadastrado com sucesso');
+        if($request->image){
+            $image = $request->file('image')->store('product');
+            $image = "storage/".$image;
+        }else{
+            $image = "storage/product/semImagem.jpg";
+            }
+
+
+        Product::create([
+            'name' => $request->name,
+            'desc' => $request->desc,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            'image' => $image
+        ]);
+
+        session()->flash('success', 'Produto foisalvo com sucesso !');
         return redirect(route('product.index'));
+
+
+
     }
 
     public function edit(Product $product){
@@ -30,7 +50,24 @@ class ProductsController extends Controller
     //public function update(Product $product, Resquest $request)
 
     public function update(Request $request, Product $product){
-        $product->update($request->all());
+         if($request->image){
+            $image = $request->file('image')->store('product');
+            $image = "storage/".$image;
+            if($product->image != "storage/product/semImagem.jpg"){
+                Storage::delete(str_replace('storage/', '', $product->image));
+            }
+        }else{
+            $image = $product->image;
+            }
+
+        $product->update([
+            'name' => $request->name,
+            'desc' => $request->desc,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            'image' => $image
+        ]);
+
         session()->flash('success', 'Produto alterado com sucesso!');
         return redirect(route('product.index'));
     }

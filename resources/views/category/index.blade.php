@@ -12,7 +12,6 @@
                 }
             }
 
-        alert('0000000000000');
         </script>
     </head>
     <body class="container mt-5">

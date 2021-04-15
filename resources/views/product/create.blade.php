@@ -28,9 +28,8 @@
                         @endforeach
                     </select>
                     <span class="form-label fs-5 text-uppercase mt-3">Imagem:</span>
-
                     <input type="file" name="image" class="form-control" required>
-                    <!--<input type="text" name="name" class="form-control" required>-->
+
                     {{-- <span class="form-label fs-5 text-uppercase mt-3">Opções:</span>
                     <input type="text" name="opcao" class="form-control" required> --}}
                 </div>

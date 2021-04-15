@@ -35,6 +35,7 @@
                         <thead>
                             <tr class="text-uppercase">
                                 <th>ID</th>
+                                <th>Imagem</th>
                                 <th>Nome</th>
                                 <th>Preço</th>
                                 <th>Descrição</th>
@@ -48,6 +49,7 @@
                             @foreach ($products as $prod)
                                 <tr>
                                     <td>{{ $prod->id }}</td>
+                                    <td><img src ="{{ asset($prod->image) }}" style = "width : 70px"></td>
                                     <td>{{ $prod->name }}</td>
                                     <td>{{ $prod->price }}</td>
                                     <td>{{ $prod->desc }}</td>
