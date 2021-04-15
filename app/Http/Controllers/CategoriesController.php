@@ -44,4 +44,11 @@ class CategoriesController extends Controller
     public function trash(){
         return view('category.trash')->with('categories', Category::onlyTrashed()->get());
     }
+
+    public function restore($id){
+        $category = Category::onlyTrashed()->where('id', $id)->firstOrFail();
+        $category->restore();
+        session()->flash('success', 'Categoria foi restaurado com sucesso!');
+        return redirect(route('category.trash'));
+    }
 }

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <link rel="stylesheet" href="./css/bootstrap.css">
-        <script src="./js/bootstrap.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <script src="/js/bootstrap.js"></script>
         <title>Lista de Tags</title>
 
         <script>
@@ -12,6 +12,7 @@
         </script>
     </head>
     <body class="container mt-5">
+        @include('layouts.menu')
         @if(@session()->has('success'))
 
             <div class="alert alert-success text-center" role="alert">

@@ -9,6 +9,7 @@
     <title>Editar Produto</title>
 </head>
 <body>
+    @include('layouts.menu')
     <div class="container mt-5" class="row shadow p-3 mb-5 bg-white rounded">
     <h1>Edita produto</h1>
         <form method="POST" action="{{ Route('product.update', $product->id) }}">
@@ -25,9 +26,21 @@
             </div>
 
             <div class="row">
-                <span class="form-label text-uppercase fs-5">Preço:</span>
+                <span class="form-label text-uppercase fs-5">Descrição</span>
                 <input type="text" name="desc" class="form-control" value="{{ $product->desc }}">
             </div>
+
+            <div class="row">
+            <span class="form-label fs-5 text-uppercase">Categoria:</span>
+                <select class="form-select" name="category_id">
+                    @foreach($categories as $category)
+
+                        <option value="{{$category->id}}" @if($category->id == $product->category_id) selected @endif>{{$category->name}}</option>
+
+                    @endforeach
+                </select>
+            </div>
+
 
             <div class="d-flex justify-content-around">
                 <div class="mt-4">

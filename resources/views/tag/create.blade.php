@@ -6,6 +6,7 @@
         <title>Cadastra Categoria</title>
     </head>
     <body>
+        @include('layouts.menu')
         <h1 class="text-center text-muted text-uppercase mt-3">Criar Tag</h1>
 
         <div class="container mt-5" class="row shadow p-3 mb-5 bg-white rounded">

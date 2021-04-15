@@ -7,14 +7,13 @@
 
         <script>
             function remover(route){
-                if(confirm('Deseja remover o produto?')){
+                if(confirm('Deseja remover o produto ?')){
                     window.location = route;
                 }
             }
         </script>
     </head>
     <body class="container-fluid">
-
         @include('layouts.menu')
         <main class="container mt-5">
 
@@ -39,6 +38,7 @@
                                 <th>Nome</th>
                                 <th>Preço</th>
                                 <th>Descrição</th>
+                                <th>Categoria</th>
                                 <th>Opções</th>
                             </tr>
                         </thead>
@@ -51,6 +51,7 @@
                                     <td>{{ $prod->name }}</td>
                                     <td>{{ $prod->price }}</td>
                                     <td>{{ $prod->desc }}</td>
+                                    <td>{{ $prod->category->name }}</td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-success">Visualizar</a>
                                         <a href="{{ Route('product.edit',$prod->id) }}" class="btn btn-sm btn-warning">Editar</a>

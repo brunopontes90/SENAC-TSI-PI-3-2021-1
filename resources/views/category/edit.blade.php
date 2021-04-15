@@ -6,11 +6,13 @@
     <title>Editar Categoria</title>
 </head>
 <body class="container mt-5">
+    @include('layouts.menu')
+
     <h1 class="text-center text-uppercase text-muted">Editar Categoria</h1>
     <div class="row shadow p-3 mb-5 bg-white rounded">
         <form method="POST" action="{{ Route('category.update', $category->id) }}">
             @csrf
-            @method('PUT')
+            @method('PATCH')
             <div class="row">
                 <span class="form-label text-uppercase fs-5">Nome:</span>
                 <input type="text" name="name" class="form-control" value="{{ $category->name }}">

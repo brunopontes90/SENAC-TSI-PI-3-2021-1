@@ -6,8 +6,8 @@
         <title>Lixeira de Produtos</title>
 
         <script>
-            function remover(route){
-                if(confirm('Deseja remover o produto?')){
+            function restore(route){
+                if(confirm('Deseja restaurar o produto?')){
                     window.location = route;
                 }
             }
@@ -25,11 +25,6 @@
             @endif
 
             <h1 class="text-uppercase text-muted text-center">Lixeira de produtos</h1>
-
-            <div class="row shadow p-3 mb-5 bg-white rounded">
-                <div class="d-flex justify-content-end mt-2">
-                    <a href="{{Route('product.create')}}" class="btn btn-lg btn-primary text-uppercase">Criar Produto</a>
-                </div>
 
                 <div class="row mt-3">
                     <table class="table table-striped">
@@ -52,12 +47,10 @@
                                     <td>{{ $prod->price }}</td>
                                     <td>{{ $prod->desc }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-success">Visualizar</a>
-                                        <a href="{{ Route('product.edit',$prod->id) }}" class="btn btn-sm btn-warning">Editar</a>
-                                        <form class="d-inline" method="POST" action="{{ route('product.destroy', $prod->id) }}" onsubmit="return remover();">
+                                        <form class="d-inline" method="POST" action="{{ route('product.restore', $prod->id) }}" onsubmit="return restore();">
                                             @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger">Apagar</button>
+                                            @method('PATCH')
+                                            <button type="submit" class="btn btn-sm btn-success">Restaurar</button>
                                         </form>
                                     </td>
                                 </tr>

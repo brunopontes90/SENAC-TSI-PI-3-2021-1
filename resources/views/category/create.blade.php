@@ -6,6 +6,7 @@
         <title>Cadastra Categoria</title>
     </head>
     <body class="container mt-5 bg-light">
+        @include('layouts.menu')
 
         <h1 class="text-center text-muted text-uppercase">Cadastra Categoria</h1>
 

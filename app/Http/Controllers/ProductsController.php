@@ -4,19 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductsController extends Controller
 {
     public function index(){
         return view('product.index')->with('products', Product::all());
     }
-    /*
-    public function products(){
-        return view('product.products')->with('product', Product::all());
-    }
-    */
+
     public function create(){
-        return view('product.create');
+        return view('product.create')->with('categories', Category::all());
+
     }
 
     public function store(Request $request){
@@ -26,7 +24,7 @@ class ProductsController extends Controller
     }
 
     public function edit(Product $product){
-        return view('product.edit')->with('product', $product);
+        return view('product.edit')->with(['product' => $product, 'categories'=>Category::all()]);
     }
 
     //public function update(Product $product, Resquest $request)
@@ -49,4 +47,13 @@ class ProductsController extends Controller
     public function trash(){
         return view('product.trash')->with('products', Product::onlyTrashed()->get());
     }
+
+    public function restore($id){
+        $product = Product::onlyTrashed()->where('id', $id)->firstOrFail();
+        $product->restore();
+        session()->flash('success', 'Produto foi restaurado com sucesso!');
+        return redirect(route('product.trash'));
+    }
+
+
 }

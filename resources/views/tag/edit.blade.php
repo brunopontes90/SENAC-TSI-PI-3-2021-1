@@ -11,6 +11,7 @@
     <title>Editar Tag</title>
 </head>
 <body class="container mt-5">
+    @include('layouts.menu')
     <h1>Editar tag</h1>
     <div class="row shadow p-3 mb-5 bg-white rounded">
         <form method="POST" action="{{ Route('tag.update', $tag->id) }}">

@@ -27,8 +27,15 @@ Route::get('/dashboard', function () {
 
 
 Route::resource('/product', ProductsController::class)->middleware(['auth']);
-Route::resource('/category', CategoriesController::class)->middleware(['auth']);
-Route::resource('/tag', TagController::class)->middleware(['auth']);
 Route::get('/trash/product', [ProductsController::class, 'trash'])->name('product.trash');
+Route::patch('/product/restore/{Product}', [ProductsController::class, 'restore'])->name('product.restore');
+
+
+Route::resource('/category', CategoriesController::class)->middleware(['auth']);
 Route::get('/trash/category', [CategoriesController::class, 'trash'])->name('category.trash');
-Route::get('/trash/tag', [TagsController::class, 'trash'])->name('tag.trash');
+Route::patch('/category/restore/{Category}', [CategoriesController::class, 'restore'])->name('category.restore');
+
+Route::resource('/tag', TagController::class)->middleware(['auth']);
+Route::get('/trash/tag', [TagController::class, 'trash'])->name('tag.trash');
+Route::patch('/tag/restore/{Tag}', [TagController::class, 'restore'])->name('tag.restore');
+
