@@ -78,7 +78,7 @@ class ProductsController extends Controller
     }
 
     public function show(Product $product){
-
+        dd($product);
     }
 
     public function trash(){

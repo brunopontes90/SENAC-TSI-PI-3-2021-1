@@ -13,7 +13,7 @@
             }
         </script>
     </head>
-    <body class="container-fluid">
+    <body class="container">
 
         @include('layouts.menu')
         <main class="container mt-5">

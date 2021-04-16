@@ -14,7 +14,7 @@
 
         </script>
     </head>
-    <body class="container mt-5">
+    <body class="container">
         @include('layouts.menu')
         @if(@session()->has('success'))
 
@@ -24,9 +24,11 @@
 
         @endif
 
-        <h1 class="text-center text-uppercase text-muted mb-5">Categorias</h1>
+
+       <h1 class="text-center text-uppercase text-muted mt-5">Lista de Categorias</h1>
+
        <div class="row shadow p-3 mb-5 bg-white rounded">
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end mt-2">
             <a href="{{route('category.create')}}" class="btn btn-lg btn-primary mb-4 text-uppercase">Criar Categoria</a>
         </div>
 

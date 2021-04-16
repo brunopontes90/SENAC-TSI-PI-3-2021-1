@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <nav class="nav navbar-expand-lg navbar-light bg-light">
+        <nav class="d-flex justify-content-center nav navbar-expand-lg navbar-light bg-light">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('product.index') }}">Produtos</a>

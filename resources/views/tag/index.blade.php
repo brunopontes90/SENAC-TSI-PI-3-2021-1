@@ -11,7 +11,7 @@
             }
         </script>
     </head>
-    <body class="container mt-5">
+    <body class="container">
         @include('layouts.menu')
         @if(@session()->has('success'))
 
