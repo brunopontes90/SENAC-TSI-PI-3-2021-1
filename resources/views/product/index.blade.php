@@ -27,7 +27,7 @@
 
             <div class="row shadow p-3 mb-5 bg-white rounded">
                 <div class="d-flex justify-content-end mt-2">
-                    <a href="{{Route('product.create')}}" class="btn btn-lg btn-primary text-uppercase">Criar Produto</a>
+                    <a href="{{route('product.create')}}" class="btn btn-lg btn-primary text-uppercase">Criar Produto</a>
                 </div>
 
                 <div class="row mt-3">

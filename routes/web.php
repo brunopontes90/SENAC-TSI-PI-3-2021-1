@@ -15,8 +15,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('/product', ProductsController::class, ['only' => ['show']]);
-
 Route::group(['middleware' => 'isAdmin'], function() {
     Route::resource('/product', ProductsController::class, ['except' => ['show']]);
     Route::get('/trash/product', [ProductsController::class, 'trash'])->name('product.trash');
@@ -32,5 +30,7 @@ Route::group(['middleware' => 'isAdmin'], function() {
     Route::patch('/tag/restore/{Tag}', [TagController::class, 'restore'])->name('tag.restore');
 
 });
+
+Route::resource('/product', ProductsController::class, ['only' => ['show']]);
 
 

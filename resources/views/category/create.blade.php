@@ -5,12 +5,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <title>Cadastra Categoria</title>
     </head>
-    <body class="container mt-5 bg-light">
+    <body class="container bg-light">
         @include('layouts.menu')
 
-        <h1 class="text-center text-muted text-uppercase">Cadastra Categoria</h1>
+        <h1 class="mt-5 text-center text-muted text-uppercase">Cadastra Categoria</h1>
 
-        <div class="row shadow p-3 mb-5 bg-white rounded">
+        <div class="row shadow p-3 bg-white rounded">
             <form method="POST" action="{{route('category.store')}}">
                 @csrf
                 <div class="row">
