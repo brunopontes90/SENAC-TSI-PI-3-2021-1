@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/bootstrap.js"></script>
-    <title>Document</title>
+    <title>Consoles | Coleção</title>
 </head>
 <body>
     <header>
