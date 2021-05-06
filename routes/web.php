@@ -15,6 +15,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+// ROTA PARA LAYOUTS
+Route::get('layouts', function(){
+    return view('layouts.menu-index');
+});
+
 Route::group(['middleware' => 'isAdmin'], function() {
     Route::resource('/product', ProductsController::class, ['except' => ['show']]);
     Route::get('/trash/product', [ProductsController::class, 'trash'])->name('product.trash');
