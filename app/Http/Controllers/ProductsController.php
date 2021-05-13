@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Tag;
 
 
 class ProductsController extends Controller
@@ -15,7 +16,7 @@ class ProductsController extends Controller
     }
 
     public function create(){
-        return view('product.create')->with('categories', Category::all());
+        return view('product.create')->with(['categories' => Category::all(), 'tags' => Tag::all()]);
 
     }
 
@@ -28,13 +29,15 @@ class ProductsController extends Controller
             }
 
 
-        Product::create([
+        $product = Product::create([
             'name' => $request->name,
             'desc' => $request->desc,
             'price' => $request->price,
             'category_id' => $request->category_id,
             'image' => $image
         ]);
+
+        $product->tags()->sync($request->tags);
 
         session()->flash('success', 'Produto foisalvo com sucesso !');
         return redirect(route('product.index'));
@@ -44,7 +47,7 @@ class ProductsController extends Controller
     }
 
     public function edit(Product $product){
-        return view('product.edit')->with(['product' => $product, 'categories'=>Category::all()]);
+        return view('product.edit')->with(['product' => $product, 'categories'=>Category::all(), 'tags' => Tag::all()]);
     }
 
     //public function update(Product $product, Resquest $request)
@@ -52,8 +55,8 @@ class ProductsController extends Controller
     public function update(Request $request, Product $product){
          if($request->image){
             $image = $request->file('image')->store('product');
-            $image = "storage/".$image;
-            if($product->image != "storage/product/semImagem.jpg"){
+            $image = "storage/app/public/product".$image;
+            if($product->image != "storage/app/public/product/semImagem.jpg"){
                 Storage::delete(str_replace('storage/', '', $product->image));
             }
         }else{
@@ -67,6 +70,8 @@ class ProductsController extends Controller
             'category_id' => $request->category_id,
             'image' => $image
         ]);
+
+        $product->tags()->sync($request->tags);
 
         session()->flash('success', 'Produto alterado com sucesso!');
         return redirect(route('product.index'));

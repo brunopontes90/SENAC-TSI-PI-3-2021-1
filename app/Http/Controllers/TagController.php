@@ -47,6 +47,12 @@ class TagController extends Controller
 
     public function destroy(Tag $tag)
     {
+        if($tag->products()->count() > 0){
+            session()->flash('success','Tag não pode ser deletada existem produtos com essa Tag');
+            return redirect(route('tag.index')); //RETORNA PARA A TELA DE PRODUTO
+
+        }
+
         $tag->delete();
         session()->flash('success','Tag apagadas com sucesso!');
         return redirect(route('tag.index')); //RETORNA PARA A TELA DE TAG

@@ -27,6 +27,18 @@
 
                         @endforeach
                     </select>
+
+                    <span class="form-label fs-5 text-uppercase">Tags:</span>
+                    <select class="form-select" name="tags[]" multiple>
+                        @foreach($tags as $tag)
+
+                        <option value="{{$tag->id}}">{{$tag->name}}</option>
+
+                        @endforeach
+                    </select>
+
+
+
                     <span class="form-label fs-5 text-uppercase mt-3">Imagem:</span>
                     <input type="file" name="image" class="form-control" required>
 
