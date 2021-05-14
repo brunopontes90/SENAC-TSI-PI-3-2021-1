@@ -13,7 +13,7 @@
             }
         </script>
     </head>
-    <body class="container">
+    <body class="container bg-secondary mb-5">
         @include('layouts.menu')
         <main class="container mt-5">
 
@@ -23,15 +23,15 @@
                 </div>
             @endif
 
-            <h1 class="text-uppercase text-muted text-center">Lista de produtos</h1>
+            <h1 class="text-uppercase text-center text-white fw-bold">Lista de produtos</h1>
 
-            <div class="row shadow p-3 mb-5 bg-white rounded">
+            <div class="row p-3 mb-5 bg-dark rounded" style="box-shadow: 2px 3px 3px 0px #FFFFFF">
                 <div class="d-flex justify-content-end mt-2">
-                    <a href="{{route('product.create')}}" class="btn btn-lg btn-primary text-uppercase">Criar Produto</a>
+                    <a href="{{route('product.create')}}" class="btn btn-lg btn-primary text-uppercase fw-bold" style="box-shadow: 2px 1px 1px 0px #FFFFFF">Criar Produto</a>
                 </div>
 
                 <div class="row mt-3">
-                    <table class="table table-striped">
+                    <table class="table table-striped text-white">
                         <thead>
                             <tr class="text-uppercase">
                                 <th>ID</th>
@@ -47,7 +47,7 @@
 
                         {{-- PEGA TODOS OS ELEMENTOS DO BANCO --}}
                             @foreach ($products as $prod)
-                                <tr>
+                                <tr class="text-white">
                                     <td>{{ $prod->id }}</td>
                                     <td><img src ="{{ asset($prod->image) }}" style="width:70px"></td>
                                     <td>{{ $prod->name }}</td>
@@ -55,12 +55,12 @@
                                     <td>{{ $prod->desc }}</td>
                                     <td>{{ $prod->category->name }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-success">Visualizar</a>
-                                        <a href="{{ Route('product.edit',$prod->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                                        <a href="{{route('product.show', $prod->id)}}" class="btn btn-sm btn-success mx-1">Visualizar</a>
+                                        <a href="{{ Route('product.edit',$prod->id) }}" class="btn btn-sm btn-warning mx-1">Editar</a>
                                         <form class="d-inline" method="POST" action="{{ route('product.destroy', $prod->id) }}" onsubmit="return remover();">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger">Apagar</button>
+                                            <button type="submit" class="btn btn-sm btn-danger mx-1">Apagar</button>
                                         </form>
                                     </td>
                                 </tr>

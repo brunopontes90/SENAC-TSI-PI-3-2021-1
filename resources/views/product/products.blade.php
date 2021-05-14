@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <link rel="stylesheet" href="./css/bootstrap.css">
-        <script src="./js/bootstrap.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/bootstrap.js"></script>
         <title>Lista de Produtos</title>
 
         <script>
@@ -24,7 +24,6 @@
             @endif
 
             <h1 class="text-uppercase text-muted text-center">Lista de produtos</h1>
-
             <div class="row shadow p-3 mb-5 bg-white rounded">
                 <div class="d-flex justify-content-end mt-2">
                     <a href="{{Route('front.create')}}" class="btn btn-lg btn-primary text-uppercase">Criar Produto</a>

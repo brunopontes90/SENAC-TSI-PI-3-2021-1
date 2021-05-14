@@ -13,7 +13,7 @@
             }
         </script>
     </head>
-    <body class="container">
+    <body class="container bg-secondary">
 
         @include('layouts.menu')
         <main class="container mt-5">
@@ -24,10 +24,10 @@
                 </div>
             @endif
 
-            <h1 class="text-uppercase text-muted text-center">Lixeira de produtos</h1>
+            <h1 class="text-uppercase text-center fw-bold text-white">Lixeira de produtos</h1>
 
-                <div class="row mt-3">
-                    <table class="table table-striped">
+                <div class="row mt-3 p-5 bg-dark" style="box-shadow: 2px 3px 3px 0px #FFFFFF">
+                    <table class="table table-striped text-white">
                         <thead>
                             <tr class="text-uppercase">
                                 <th>ID</th>
@@ -41,7 +41,7 @@
 
                         {{-- PEGA TODOS OS ELEMENTOS DO BANCO --}}
                             @foreach ($products as $prod)
-                                <tr>
+                                <tr class="text-white">
                                     <td>{{ $prod->id }}</td>
                                     <td>{{ $prod->name }}</td>
                                     <td>{{ $prod->price }}</td>

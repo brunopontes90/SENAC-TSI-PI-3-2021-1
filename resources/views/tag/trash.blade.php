@@ -4,20 +4,20 @@
         <link rel="stylesheet" href="./css/bootstrap.css">
         <script src="./js/bootstrap.js"></script>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-
-
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <script src="/js/bootstrap.js"></script>
         <title>Lixeira de Tags</title>
 
         <script>
-            function restore(){
-                return confirm('Deseja restaurar a Tag?');
+            function restore(route){
+                if(confirm('Deseja restaurar a tag?')){
+                    window.location = route;
+                }
             }
+
         </script>
     </head>
-    <body class="container mt-5">
+    <body class="container bg-secondary">
         @include('layouts.menu')
 
         @if(@session()->has('success'))
@@ -28,12 +28,12 @@
 
         @endif
 
-        <h1 class="text-uppercase text-muted text-center">Lixeira de Tags</h1>
+        <h1 class="text-uppercase text-center fw-bold text-white mt-5">Lixeira de Tags</h1>
 
-        <div class="row shadow p-3 mb-5 bg-white rounded">
+        <div class="row mt-3 p-5 bg-dark" style="box-shadow: 2px 3px 3px 0px #FFFFFF">
 
             <div class="row mt-3">
-                <table class="table table-striped">
+                <table class="table table-striped text-white">
                     <thead>
                         <tr class="text-uppercase">
                             <th>ID</th>
@@ -45,7 +45,7 @@
 
                     {{-- PEGA TODOS OS ELEMENTOS DO BANCO --}}
                         @foreach ($tags as $tag)
-                            <tr>
+                            <tr class="text-white">
                                 <td>{{ $tag->id }}</td>
                                 <td>{{ $tag->name }}</td>
                                 <td>

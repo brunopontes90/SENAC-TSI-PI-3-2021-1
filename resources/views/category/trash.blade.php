@@ -14,7 +14,7 @@
 
         </script>
     </head>
-            <body class="container mt-5">
+    <body class="container bg-secondary">
         @include('layouts.menu')
         @if(@session()->has('success'))
 
@@ -24,10 +24,10 @@
 
         @endif
 
-        <h1 class="text-center text-uppercase text-muted mb-5">Lixeira de Categorias</h1>
-       <div class="row shadow p-3 mb-5 bg-white rounded">
-        <div>
-            <table class="table table-striped">
+        <h1 class="text-uppercase text-center fw-bold text-white mt-5">Lixeira de Categorias</h1>
+       <div class="row mt-3 p-5 bg-dark" style="box-shadow: 2px 3px 3px 0px #FFFFFF">
+
+            <table class="table table-striped text-white">
                 <thead>
                     <tr class="text-uppercase">
                         <th>ID</th>
@@ -37,21 +37,21 @@
                 </thead>
                 <tbody>
                     @foreach ($categories as $cat)
-                        <tr>
+                        <tr class="text-white">
                             <td>{{$cat->id}}</td>
                         <td>{{$cat->name}} ({{ $cat->products->count() }})</td>
-                        <td class="text-uppercase">
+                        <td>
                             <form class="d-inline" method="POST" action="{{ route('category.restore', $cat->id) }}" onsubmit="return restore();">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-sm btn-success">Restaurar</button>
+                                <button type="submit" class="btn btn-sm btn-success fw-bold text-uppercase">Restaurar</button>
                             </form>
                         </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-        </div>
+
        </div>
 
     </body>

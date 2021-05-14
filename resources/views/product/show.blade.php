@@ -1,4 +1,5 @@
 {{-- ESTENTE TUDO DE STORE DENTRO DE LAYOUTS  --}}
+@include('layouts.menu')
 @extends('layouts.store')
 
 {{-- SUBSTITUI ONDE ESTA O @yield('content') NO OUTRO ARQUIVO --}}

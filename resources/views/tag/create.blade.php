@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <script src="/js/bootstrap.js"></script>
         <title>Cadastra Categoria</title>
     </head>
-    <body>
+    <body class="container bg-secondary">
         @include('layouts.menu')
-        <h1 class="text-center text-muted text-uppercase mt-3">Criar Tag</h1>
 
-        <div class="container mt-5" class="row shadow p-3 mb-5 bg-white rounded">
+        <h1 class="mt-5 text-center text-uppercase text-white fw-bold">Criar Tag</h1>
+
+        <div class="row p-3 mx-1 bg-dark" style="box-shadow: 2px 3px 3px 0px #FFFFFF">
             <form method="POST" action="{{route('tag.store')}}">
                 @csrf
                 <div class="row">
-                    <span class="form-label fs-5 text-uppercase">Nome:</span>
+                    <span class="form-label fs-5 text-uppercase text-white">Nome:</span>
                     <input type="text" name="name" class="form-control" required>
                 </div>
                 <div class="d-flex justify-content-around">
                     <div class="row mt-4">
-                        <button type="submit" class="btn btn-success text-uppercase">Salvar</button>
+                        <button type="submit" class="btn btn-success btn-lg text-uppercase">Salvar</button>
                     </div>
                     <div class="mt-4">
-                        <a href="{{Route('tag.index')}}" class="btn btn-dark text-uppercase">Voltar</a>
+                        <a href="{{Route('tag.index')}}" class="btn btn-warning btn-lg text-uppercase">Voltar</a>
                     </div>
                 </div>
 

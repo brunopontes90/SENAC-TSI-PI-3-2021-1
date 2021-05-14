@@ -6,12 +6,14 @@
         <title>Lista de Tags</title>
 
         <script>
-            function remover(){
-                return confirm('Deseja remover a Tag?');
+            function remover(route){
+                if(confirm('Deseja remover a tag?')){
+                    window.location = route;
+                }
             }
         </script>
     </head>
-    <body class="container">
+    <body class="container bg-secondary mb-5">
         @include('layouts.menu')
         @if(@session()->has('success'))
 
@@ -21,15 +23,15 @@
 
         @endif
 
-        <h1 class="text-uppercase text-muted text-center">Lista de tags</h1>
+        <h1 class="text-uppercase text-center text-white fw-bold mt-5">Lista de tags</h1>
 
-        <div class="row shadow p-3 mb-5 bg-white rounded">
+        <div class="row p-3 mb-5 bg-dark rounded" style="box-shadow: 2px 3px 3px 0px #FFFFFF">
             <div class="d-flex justify-content-end mt-2">
-                <a href="{{route('tag.create')}}" class="btn btn-lg btn-primary text-uppercase">Criar Tag</a>
+                <a href="{{route('tag.create')}}" class="btn btn-lg btn-primary text-uppercase fw-bold" style="box-shadow: 2px 1px 1px 0px #FFFFFF">Criar Tag</a>
             </div>
 
             <div class="row mt-3">
-                <table class="table table-striped">
+                <table class="table table-striped text-white">
                     <thead>
                         <tr class="text-uppercase">
                             <th>ID</th>
@@ -41,16 +43,16 @@
 
                     {{-- PEGA TODOS OS ELEMENTOS DO BANCO --}}
                         @foreach ($tags as $tag)
-                            <tr>
+                            <tr class="text-white">
                                 <td>{{ $tag->id }}</td>
                                 <td>{{ $tag->name }} ({{ $tag->products()->count()}})</td>
                                 <td>
-                                    <a href="#" class="btn btn-sm btn-success">Visualizar</a>
-                                    <a href="{{ route('tag.edit',$tag->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                                    <a href="#" class="btn btn-sm btn-success mx-1">Visualizar</a>
+                                    <a href="{{ route('tag.edit',$tag->id) }}" class="btn btn-sm btn-warning mx-1">Editar</a>
                                     <form class="d-inline" method="POST" action="{{ route('tag.destroy', $tag->id) }}" onsubmit="return();">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger">Apagar</button>
+                                        <button type="submit" class="btn btn-sm btn-danger mx-1">Apagar</button>
                                     </form>
                                 </td>
                             </tr>
