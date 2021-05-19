@@ -29,4 +29,9 @@ class Product extends Model
 
     }
 
+    public function promocoes(){
+        return $this::all()->take(2);
+        /* return $this::all('destaque','=','1')->orderBy('updated_at')->take(3); */
+    }
+
 }

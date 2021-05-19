@@ -6,7 +6,7 @@
 <section>
     <div class="row py-5">
         <div class=" text-center my-2">
-            <h2>{{ $tag-name}}</h2>
+            <h2>{{ $category-name}}</h2>
             <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero rem delectus quas? Optio saepe maxime totam nulla assumenda? Voluptas cumque mollitia libero quos necessitatibus voluptate sapiente autem ab dolore esse.</span>
         </div>
     </div>

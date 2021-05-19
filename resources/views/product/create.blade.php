@@ -38,7 +38,7 @@
                     </select>
 
                     <span class="form-label fs-5 text-uppercase mt-3">Imagem:</span>
-                    <input type="file" name="image" class="form-control" required>
+                    <input type="file" name="image" class="form-control">
 
                     {{-- <span class="form-label fs-5 text-uppercase mt-3">Opções:</span>
                     <input type="text" name="opcao" class="form-control" required> --}}
