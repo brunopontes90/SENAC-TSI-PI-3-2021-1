@@ -20,8 +20,8 @@
                     <span class="d-block fw-bold">$product->name</span>
                     <span class="d-block">R${{$product->price}}</span>
                     <div class="mt-2">
-                        <a href="{{ routes('product.show', $product->id) }}" class="btn btn-secondary">Visualizar</a>
-                        <a href="#" class="btn-primary">Adicionar carrinho</a>
+                        <a href="{{ route('product.show', $product->id) }}" class="btn btn-secondary">Visualizar</a>
+                        <a href="{{ route('cart.add', $product->id) }}" class="btn-primary">Adicionar carrinho</a>
                 </div>
                 </div>
             </div>

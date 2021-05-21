@@ -4,11 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\CartsController;
 
 require __DIR__.'/auth.php';
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -37,6 +38,12 @@ Route::group(['middleware' => 'isAdmin'], function() {
     Route::get('/trash/tag', [TagController::class, 'trash'])->name('tag.trash');
     Route::patch('/tag/restore/{Tag}', [TagController::class, 'restore'])->name('tag.restore');
 
+});
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/cart/add/{product}', [CartsController::class, 'add'])->name('cart.add'); /*Carrinho*/
+    Route::get('/cart/remove/{product}', [CartsController::class, 'remove'])->name('cart.remove');
+    Route::get('/cart', [CartsController::class, 'show'])->name('cart.show');
 });
 
 Route::resource('/product', ProductsController::class, ['only' => ['show']]);
