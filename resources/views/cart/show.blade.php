@@ -27,7 +27,7 @@
                     <a href="{{ route ('cart.remove', item->product()-id) }}" class="btn btn-warning">-</a>
                 </td>
                 <td>
-                    <span> R$ {{ $item->product()->price * $item->quantity }} (R$ {{ $item->product()->price }})</span>
+                    <span> R$ {{ $item->product()->price * $item->quantity, 2, ',' , '.' }} (R$ {{ $item->product()->price }})</span>
                 @php
                     $total += $item->product()->price * $item->quantity;
                 @endphp
@@ -38,7 +38,7 @@
     </tbody>
 </table>
 <div class="d-flex flex-column flex-wrap aling-items-end">
-<span class="h3 mx-05">total da compra R$ {{ $total }}</span>
-    <a href="#" class="btn btn-lg button-primary">Pagar</a>
+<span class="h3 mx-05">total da compra R$ {{ number_format($total, 2, ',' , '.') }}</span>
+    <a href="{{ route('cart.payment')}}" class="btn btn-lg button-primary">Pagar</a>
 </div>
 @endsection
