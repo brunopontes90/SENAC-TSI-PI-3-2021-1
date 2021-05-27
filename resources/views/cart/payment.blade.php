@@ -14,7 +14,7 @@
         <h3>Resumo da compra</h3>
         <div class="ms-3">
             <div>
-                <span>QSuantidade de produtos comprados</span>
+                <span>Quantidade de produtos comprados</span>
                 <a href="{{ route('cart.show') }}" class="float-end me-4">{{ \App\Models\Cart::count() }} produto(s)</a>
             </div>
             <div>

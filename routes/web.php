@@ -10,7 +10,7 @@ use App\Http\Controllers\OrderController;
 require __DIR__.'/auth.php';
 
 Route::get('/', function () {
-    return redirect('welcome');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {

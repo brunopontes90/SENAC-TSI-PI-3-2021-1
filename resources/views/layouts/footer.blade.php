@@ -10,6 +10,24 @@
 
 <!--RODAPE-->
 <footer class="container-fluid text-white bg-dark fixed-bottom">
+    <div class="row">
+        <div class="col-6">
+            <h2>Localização:</h2>
+            <address>
+                Rua Lorem, ipsum dolor.<br>
+                Lorem, ipsum. Lorem, LR<br>
+                CEP: 00000-000<br>
+                Telefone: (11) 99999-9999
+            </address>
+        </div>
+        <div class="col-6">
+            <h2>Horario de Funcionamento</h2>
+            <ul class="list-unstyled">
+                <li>Segunda - Sexta: 9:00h as 18:00h</li>
+                <li>Sabado: 10:00h as 16:00h</li>
+            </ul>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-sm justify-content-around">
         <ul class="d-flex m-0">
             <li class="nav-link">

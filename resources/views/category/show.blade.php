@@ -1,7 +1,4 @@
 @extends('layout.store')
-
-
-
 @section('content')
 <section>
     <div class="row py-5">

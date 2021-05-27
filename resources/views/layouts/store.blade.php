@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-bren">
+{{-- <!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8455a3d02b.js" crossoringin="anonymous"></script>
-    @yield('content')
-
-    <title>Loja do Senac</title>
 </head>
-<body>
-    <header>
+<body> --}}
+    {{-- <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm">
             <div class="container">
               <h1><a class="navbar-brand" href="{{url('/')}}">Loja do Senac</a></h1>
@@ -47,10 +44,10 @@
                 </div>
               </div>
             </div>
-          </nav>
-    </header>
+          </nav> -- }}
+    </header> --}}
 
-    <main class="container my-4 text-center">
+    {{-- <main class="container my-4 text-center">
 
         @if(@session()->has('success'))
             <div class="alert alert-success" role="alert">{{ session()->get('success') }}</div>
@@ -60,9 +57,9 @@
             <div class="alert alert-danger" role="alert">{{ session()->get('error') }}</div>
         @endif
         @yield('content')
-    </main>
+    </main> --}}
 
-    <footer class="container bg-primary text-white p-5">
+    {{-- <footer class="container bg-primary text-white p-5">
         <div class="row">
             <div class="col-6">
                 <h2>Localização:</h2>
@@ -80,7 +77,7 @@
                     <li>Sabado: 10:00h as 16:00h</li>
                 </ul>
             </div>
-        </div>
-    </footer>
+        </div> --}}
+    {{-- </footer>
 </body>
-</html>
+</html> --}}
