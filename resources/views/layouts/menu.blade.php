@@ -42,14 +42,27 @@
                     <button class="ms-2 btn btn-secondary" style="min-width:95px"><i class="fas fa-search"></i>Buscar</button>
                 </form>
 
-                {{-- CARRINHO --}}
                 <div class="navbar-nav ms-5">
+
+                    {{-- SE ESTIVER LOGADO, RETORNA NOME, CARRINHO, QTD E LOGOUT --}}
                     @if (Auth()->user())
+                    {{-- SAUDAÇÃO COM NOME --}}
                         <span class="nav-link text-white">Olá, {{ Auth()->user()->name}}</span>
-                        <a class="nav-link text-white" href="{{ route('cart.show') }}">Carrinho ({{  \App\Models\Cart::count() }})</a>
+                        {{-- LOGO CARRINHO + QTD --}}
+                        <a class="nav-link text-white" href="{{ route('cart.show') }}">
+                            <i class="fas fa-shopping-cart"></i>
+                            ({{\App\Models\Cart::count()}})
+                        </a>
+
+                        {{-- FAZ LOGOUT --}}
+                        <form class="d-flex" method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button class="btn"><i class="fas fa-sign-in-alt text-white"></i></button>
+                        </form>
                     @else
+                        {{-- SE NÃO TIVER LOGADO, OPÇÃO DE REGISTRAR OU LOGAR --}}
                         <a class="nav-link text-white" href="{{ route('register') }}">Registrar</a>
-                        <a class="nav-link text-white" href="{{ route('login') }}">Logar</a>
+                        <a class="nav-link text-white" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                     @endif
                 </div>
                 </div>
