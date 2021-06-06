@@ -49,62 +49,20 @@
                     <button class="ms-2 btn btn-secondary" style="min-width:95px"><i class="fas fa-search"></i>Buscar</button>
                 </form>
 
-
-                <!--
-                {{--
-                <div class="navbar-nav ">
-                    @if (Auth()->user())
-                        <span class="nav-link">{{ Auth()->user()->name}}</span>
-                        <a class="nav-link" href="{{ route('cart.show') }}">Carrinho ({{  \App\Models\Cart::count() }})</a>
-                    @else
-                        <a class="nav-link" href="{{ route('register') }}">Registrar</a>
-                        <a class="nav-link" href="{{ route('login') }}">Logar</a>
-                    @endif
-                </div>
-                --}}
-
-
-
-                <div class="navbar-nav ms-auto">
-
-                    {{-- SE ESTIVER LOGADO, RETORNA NOME, CARRINHO, QTD E LOGOUT --}}
-                    @if (Auth()->user())
-                    {{-- SAUDAÇÃO COM NOME --}}
-                        <span class="nav-link text-BLACK">Olá, {{ Auth()->user()->name}}</span>
-                        {{-- LOGO CARRINHO + QTD --}}
-                        <a class="nav-link text-white" href="{{ route('cart.show') }}">
-                            <i class="fas fa-shopping-cart"></i>
-                            ({{\App\Models\Cart::count()}})
-                        </a>
-
-                        {{-- FAZ LOGOUT --}}
-                        <form class="d-flex" method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button class="btn"><i class="fas fa-sign-in-alt text-white"></i>
-                            <i class="fas fa-sign-out-alt"></i>
-                            </button>
-                        </form>
-                    @else
-                        {{-- SE NÃO TIVER LOGADO, OPÇÃO DE REGISTRAR OU LOGAR --}}
-                        <a class="nav-link text-white" href="{{ route('register') }}">Registrar</a>
-                        <a class="nav-link text-white" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
-                    @endif
-                    -->
-
                 <div class="navbar-nav ms-auto">
                 @if (Auth()->user())
                     <span class="nav-link">Olá, {{Auth()->user()->name}}</span>
                     <a class="nav-link" href="{{ route('cart.show') }}">Carrinho ({{  \App\Models\Cart::count() }})</a>
                     <form method="POST" action="{{route('logout')}}">
                      @csrf
-                        <button type="submit" class="btn btn-primary bg-dark text-white">
+                        <button type="submit" class="btn btn-primary bg-dark text-black">
                             <i class="fas fa-sign-out-alt"></i>
                         </button>
                     </form>
                 @else
                 {{-- BOTAO LOGIN --}}
                     <nav class="justify-content-end">
-                        <a class="fas fa-user text-white" href="{{route('login')}}">
+                        <a class="fas fa-user text-black" href="{{route('login')}}">
                             <h2 class="d-none">Login</h2>
                         </a>
                     </nav>

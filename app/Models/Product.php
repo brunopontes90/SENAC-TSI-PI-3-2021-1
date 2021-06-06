@@ -17,7 +17,8 @@ class Product extends Model
         'desc',
         'price',
         'category_id',
-        'image'
+        'image',
+        'destaque'
     ];
 
     public function category(){
@@ -33,5 +34,6 @@ class Product extends Model
         return Product::all()->take(2);
         /* return $this::all('destaque','=','1')->orderBy('updated_at')->take(3);*/
     }
+
 
 }

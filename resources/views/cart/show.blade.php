@@ -1,7 +1,7 @@
 @extends('layouts.store')
 @section('content')
 <h2>Carrinho</h2>
-
+{{ $cart }}
 <table class="table table-striped">
     <thead>
         <tr>
@@ -20,14 +20,18 @@
 
 
         @foreach($cart as $item)
+
+
             <tr>
                 <td><img src="{{ asset($item->product()->image) }}" style="width:40px"></td>
-                <td><a href="{{ route('product.show'), $item->product()->id }}">{{ $item->product()->name }}</a></td>
+                <td><a href="{{ route('product.show', $item->product()->id) }}">{{ $item->product()->name }}</a></td>
                 <td><span>{{ $item->quantity }}</span></td>
                 <td>
-                    <a href="{{ route ('cart.add', item->product()->id) }}" class="btn btn-success">+</a>
-                    <a href="{{ route ('cart.remove', item->product()->id) }}" class="btn btn-warning">-</a>
+                    <a href="{{ route ('cart.add', $item->product()->id) }}" class="btn btn-success">+</a>
+                    <a href="{{ route ('cart.remove', $item->product()->id) }}" class="btn btn-warning">-</a>
                 </td>
+
+                <!--
                 <td>
                     <span> R$ {{ $item->product()->price * $item->quantity, 2, ',' , '.' }} (R$ {{ $item->product()->price }})</span>
 
@@ -39,7 +43,7 @@
 
 
                 </td>
-
+                -->
             </tr>
         @endforeach
     </tbody>
