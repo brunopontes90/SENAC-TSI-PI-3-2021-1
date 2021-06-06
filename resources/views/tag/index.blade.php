@@ -13,7 +13,7 @@
             }
         </script>
     </head>
-    <body class="container bg-secondary mb-5">
+    <body class="container mb-5">
         @include('layouts.menu')
         @if(@session()->has('success'))
 
@@ -23,17 +23,17 @@
 
         @endif
 
-        <h1 class="text-uppercase text-center text-white fw-bold mt-5">Lista de tags</h1>
+        <h1 class="text-uppercase text-center fw-bold mt-5">Lista de tags</h1>
 
-        <div class="row p-3 mb-5 bg-dark rounded" style="box-shadow: 2px 3px 3px 0px #FFFFFF">
+        <div class="row p-3 mb-5 rounded" style="box-shadow: 0px 5px 10px 0px #000000">
             <div class="d-flex justify-content-end mt-2">
-                <a href="{{route('tag.create')}}" class="btn btn-lg btn-primary text-uppercase fw-bold" style="box-shadow: 2px 1px 1px 0px #FFFFFF">Criar Tag</a>
+                <a href="{{route('tag.create')}}" class="btn btn-lg btn-primary text-uppercase fw-bold" style="box-shadow: 2px 1px 1px 0px #BDBDBD">Criar Tag</a>
             </div>
 
             <div class="row mt-3">
-                <table class="table table-striped text-white">
+                <table class="table table-striped">
                     <thead>
-                        <tr class="text-uppercase">
+                        <tr class="text-uppercase text-muted fw-bold">
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Opções</th>
@@ -43,7 +43,7 @@
 
                     {{-- PEGA TODOS OS ELEMENTOS DO BANCO --}}
                         @foreach ($tags as $tag)
-                            <tr class="text-white">
+                            <tr>
                                 <td>{{ $tag->id }}</td>
                                 <td>{{ $tag->name }} ({{ $tag->products()->count()}})</td>
                                 <td>

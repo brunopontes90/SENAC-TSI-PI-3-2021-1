@@ -27,9 +27,9 @@ class TagController extends Controller
         return redirect(route('tag.index')); //RETORNA PARA A TELA DE TAG
     }
 
-      public function show(Tag $tag)
+    public function show(Tag $tag)
     {
-        return view('tag.show')->with(['tag'=> $tag, 'products' => $tag->products()->paginate(3)]);
+        return view('tag.show')->with('tag', $tag);
     }
 
     public function edit(Tag $tag)

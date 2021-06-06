@@ -30,7 +30,7 @@ class Product extends Model
     }
 
     public static function promocoes(){
-        return Product::all()->take(2);
+        return Product::all()->take(3);
         /* return $this::all('destaque','=','1')->orderBy('updated_at')->take(3);*/
     }
 

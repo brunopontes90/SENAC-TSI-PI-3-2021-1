@@ -32,8 +32,8 @@
                 <p class="text-white mx-5">Olá, {{Auth()->user()->name}}</p>
                 <form method="POST" action="{{route('logout')}}">
                     @csrf
-                    <button type="submit" class="btn btn-primary bg-dark text-white">
-                        <i class="fas fa-sign-out-alt"></i>
+                    <button type="submit">
+                        <i class="fas fa-sign-out-alt text-white"></i>
                     </button>
                 </form>
                 @else
@@ -45,13 +45,6 @@
                 </nav>
                 @endif
             </div>
-        </nav>
-
-        <!-- CONSOLES -->
-        <nav class="d-flex justify-content-around bg-light mt-0 p-3 h3">
-            <a class="fab fa-xbox text-success" href="#">Xbox</a>
-            <a class="fab fa-playstation text-dark" href="#">Playstation</a>
-            <a class="fas fa-gamepad text-danger" href="#">Nintendo</a>
         </nav>
     </header>
 </body>

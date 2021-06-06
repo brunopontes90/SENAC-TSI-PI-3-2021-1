@@ -13,9 +13,9 @@
             }
         </script>
     </head>
-    <body class="container bg-secondary mb-5">
+    <body class="container mb-5">
         @include('layouts.menu')
-        <main class="container mt-5">
+        <main>
 
             @if(@session()->has('success'))
                 <div class="alert alert-success text-center" role="alert">
@@ -23,17 +23,17 @@
                 </div>
             @endif
 
-            <h1 class="text-uppercase text-center text-white fw-bold">Lista de produtos</h1>
+            <h1 class="text-uppercase text-center fw-bold mt-5">Lista de produtos</h1>
 
-            <div class="row p-3 mb-5 bg-dark rounded" style="box-shadow: 2px 3px 3px 0px #FFFFFF">
+            <div class="row p-3 mb-5 rounded" style="box-shadow: 0px 5px 10px 0px #000000">
                 <div class="d-flex justify-content-end mt-2">
-                    <a href="{{route('product.create')}}" class="btn btn-lg btn-primary text-uppercase fw-bold" style="box-shadow: 2px 1px 1px 0px #FFFFFF">Criar Produto</a>
+                    <a href="{{route('product.create')}}" class="btn btn-lg btn-primary text-uppercase fw-bold" style="box-shadow: 2px 1px 1px 0px #BDBDBD">Criar Produto</a>
                 </div>
 
                 <div class="row mt-3">
-                    <table class="table table-striped text-white">
+                    <table class="table table-striped">
                         <thead>
-                            <tr class="text-uppercase">
+                            <tr class="text-uppercase text-muted fw-bold">
                                 <th>ID</th>
                                 <th>Imagem</th>
                                 <th>Nome</th>
@@ -47,7 +47,7 @@
 
                         {{-- PEGA TODOS OS ELEMENTOS DO BANCO --}}
                             @foreach ($products as $prod)
-                                <tr class="text-white">
+                                <tr>
                                     <td>{{ $prod->id }}</td>
                                     <td><img src ="{{ asset($prod->image) }}" style="width:70px"></td>
                                     <td>{{ $prod->name }}</td>
@@ -69,7 +69,7 @@
                     </table>
                 </div>
             </div>
-    </main>
+        </main>
 
     </body>
 </html>

@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8455a3d02b.js" crossorigin="anonymous"></script>
 
-</head>
-<body>
-    <header class="bg-dark">
+    <div class="bg-dark">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <div class="container-fluid">
                 <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,18 +54,12 @@
                         {{-- FAZ LOGOUT --}}
                         <form class="d-flex" method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button class="btn"><i class="fas fa-sign-in-alt text-white"></i></button>
+                            <button class="btn text-white"><i class="fas fa-sign-in-alt"></i></button>
                         </form>
-                    @else
-                        {{-- SE NÃO TIVER LOGADO, OPÇÃO DE REGISTRAR OU LOGAR --}}
-                        <a class="nav-link text-white" href="{{ route('register') }}">Registrar</a>
-                        <a class="nav-link text-white" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                     @endif
                 </div>
                 </div>
             </div>
         </nav>
-    </header>
+    </div>
 
-</body>
-</html>

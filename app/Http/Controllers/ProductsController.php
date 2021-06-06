@@ -42,15 +42,12 @@ class ProductsController extends Controller
         session()->flash('success', 'Produto foisalvo com sucesso !');
         return redirect(route('product.index'));
 
-
-
     }
 
     public function edit(Product $product){
         return view('product.edit')->with(['product' => $product, 'categories'=>Category::all(), 'tags' => Tag::all()]);
     }
 
-    //public function update(Product $product, Resquest $request)
 
     public function update(Request $request, Product $product){
          if($request->image){
