@@ -13,7 +13,6 @@ class OrderItem extends Model
 
     public function product(){
         return Product::where('id', '=', $this->product_id)->first();
-        //return $this->belongsTo(Product::class);
     }
 
 }

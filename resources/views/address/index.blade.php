@@ -3,10 +3,10 @@
     <head>
         <link rel="stylesheet" href="./css/bootstrap.css">
         <script src="./js/bootstrap.js"></script>
-        <title>Categorias</title>
+        <title>lista de endereço</title>
         <script>
             function remover(route){
-                if(confirm('Deseja remover a categoria?')){
+                if(confirm('Deseja remover a endereço?')){
                     window.location = route;
                 }
             }
@@ -23,11 +23,11 @@
 
         @endif
 
-       <h1 class="text-uppercase text-center text-muted fw-bold mt-5">Lista de Categorias</h1>
+       <h1 class="text-uppercase text-center fw-bold text-muted mt-5">Lista de endereços</h1>
 
        <div class="row p-3 mb-5 rounded" style="box-shadow: 0px 5px 10px 0px #000000">
         <div class="d-flex justify-content-end mt-2">
-            <a href="{{route('category.create')}}" class="btn btn-lg btn-primary text-uppercase fw-bold" style="box-shadow: 2px 1px 1px 0px #BDBDBD">Criar Categoria</a>
+            <a href="{{route('address.create')}}" class="btn btn-lg btn-primary text-uppercase fw-bold" style="box-shadow: 2px 1px 1px 0px #BDBDBD">Novo enderço</a>
         </div>
 
         <div class="row mt-3">
@@ -35,19 +35,21 @@
                 <thead>
                     <tr class="text-uppercase text-muted fw-bold">
                         <th>ID</th>
-                        <th>Nome</th>
-                        <th>Opções</th>
+                        <th>Endereço</th>
+                        <th>CEP</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($categories as $cat)
+                   @foreach ($address as $add)
                         <tr>
-                            <td>{{$cat->id}}</td>
-                        <td>{{$cat->name}} ({{ $cat->products->count() }})</td>
-                        <td class="text-uppercase">
-                            <a href="{{route('category.show',$cat->id)}}" class="btn btn-sm btn-success mx-1">Visualizar</a>
-                            <a href="{{route('category.edit',$cat->id)}}" class="btn btn-sm btn-warning mx-1">Editar</a>
-                            <form class="d-inline" method="POST" action="{{ route('category.destroy', $cat->id) }}" onsubmit="return remover();">
+                            <td> {{ $add->id }} </td>
+                            <td> {{ $add->address }} </td>
+                            <td> {{ $add->cep }} </td>
+                            <td class="text-uppercase">
+                                <a href="#" class="btn btn-sm btn-success mx-1">Visualizar</a>
+                                <a href="{{route('address.edit',$add->id)}}" class="btn btn-sm btn-warning mx-1">Editar</a>
+                                <form class="d-inline" method="POST" action="{{ route('address.destroy', $add->id) }}" onsubmit="return remover();">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger mx-1">Apagar</button>

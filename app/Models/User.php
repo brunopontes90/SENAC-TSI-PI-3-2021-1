@@ -25,4 +25,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function redirectPath()
+    {
+        if(auth()->user()->isAdmin()) {
+            return view('product.index');
+        }
+        return view('welcome');
+
+    }
 }

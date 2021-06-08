@@ -6,13 +6,11 @@
         height: 30px;
     }
 </style>
-<h2 class="text-uppercase fw-bold mt-5">Pagamentos</h2>
+<h2 class="text-uppercase fw-bold text-muted mt-5">Pagamentos</h2>
 <div class="row p-3 rounded" style="box-shadow: 0px 5px 10px 0px #000000">
     <div class="row mt-3 justify-content-center">
         <div class="col-md-5 col-10 my-4 p-3">
             <h3>Endereço de Entrega</h3>
-
-
             <form method="POST" class="d-flex">
                 @csrf
                 <address class="ms-3">
@@ -24,14 +22,6 @@
                 <a href="#" class="float-end my-4 mx-3">Trocar o endereço</a>
             </form>
 
-
-
-
-            {{-- <address class="ms-3">
-
-
-            </address>
-            <a href="#" class="float-end me-4">Trocar o endereço</a> --}}
         </div>
         <div class="col-md-5 col-10 bg-light my-4 p-3">
             <h3>Resumo da Compra</h3>
@@ -54,7 +44,7 @@
     </div>
     <hr>
     <form style="margin-top: 25px; margin-bottom: 70px;" method="POST" action="{{ route('order.add') }}">
-        <h2 class="text-uppercase fw-bold mt-5">Dados pagamento</h2>
+        <h2 class="text-uppercase fw-bold text-muted mt-5">Dados pagamento</h2>
         @csrf
         <div class="row justify-content-center">
             <div class="col-md-5 col-10 p-3">

@@ -23,7 +23,7 @@
 
         @endif
 
-        <h1 class="text-uppercase text-center fw-bold mt-5">Lista de tags</h1>
+        <h1 class="text-uppercase text-center fw-bold text-muted mt-5">Lista de tags</h1>
 
         <div class="row p-3 mb-5 rounded" style="box-shadow: 0px 5px 10px 0px #000000">
             <div class="d-flex justify-content-end mt-2">
@@ -47,7 +47,7 @@
                                 <td>{{ $tag->id }}</td>
                                 <td>{{ $tag->name }} ({{ $tag->products()->count()}})</td>
                                 <td>
-                                    <a href="#" class="btn btn-sm btn-success mx-1">Visualizar</a>
+                                    <a href="{{ route('tag.show',$tag->id) }}" class="btn btn-sm btn-success mx-1">Visualizar</a>
                                     <a href="{{ route('tag.edit',$tag->id) }}" class="btn btn-sm btn-warning mx-1">Editar</a>
                                     <form class="d-inline" method="POST" action="{{ route('tag.destroy', $tag->id) }}" onsubmit="return();">
                                         @csrf

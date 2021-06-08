@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AddressController;
 
 require __DIR__.'/auth.php';
 
@@ -17,16 +18,10 @@ Route::get('/dashboard', function () {
     return view('welcome');
 })->middleware(['auth'])->name('dashboard');
 
-// ROTA PARA LAYOUTS
-Route::get('layouts', function(){
-    return view('layouts.menu-index');
-});
-
 Route::group(['middleware' => 'isAdmin'], function() {
     Route::resource('/product', ProductsController::class, ['except' => ['show']]);
     Route::get('/trash/product', [ProductsController::class, 'trash'])->name('product.trash');
     Route::patch('/product/restore/{Product}', [ProductsController::class, 'restore'])->name('product.restore');
-    /*Route::post('/product/search')*/
 
 
     Route::resource('/category', CategoriesController::class, ['except' => ['show']]);
@@ -48,6 +43,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/cart', [CartsController::class, 'show'])->name('cart.show');
     Route::post('/order/add', [OrderController::class, 'add'])->name('order.add');
     Route::get('/order', [OrderController::class, 'show'])->name('order.show');
+    Route::resource('/address', AddressController::class);
 });
 
 Route::resource('/product', ProductsController::class, ['only' => ['show']]);

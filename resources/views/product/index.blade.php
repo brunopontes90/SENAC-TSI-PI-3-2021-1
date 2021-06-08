@@ -23,7 +23,7 @@
                 </div>
             @endif
 
-            <h1 class="text-uppercase text-center fw-bold mt-5">Lista de produtos</h1>
+            <h1 class="text-uppercase text-center fw-bold text-muted mt-5">Lista de produtos</h1>
 
             <div class="row p-3 mb-5 rounded" style="box-shadow: 0px 5px 10px 0px #000000">
                 <div class="d-flex justify-content-end mt-2">

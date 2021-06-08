@@ -14,6 +14,5 @@ class Order extends Model
 
     public function items(){
         return OrderItem::where('order_id', '=' $this->id)->get();
-        //return $this->hasMany(OrderItem::class);
     }
 }

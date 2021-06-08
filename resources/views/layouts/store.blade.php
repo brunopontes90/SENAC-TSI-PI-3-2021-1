@@ -17,9 +17,9 @@
                 <ul class="navbar-nav">
 
                     {{-- SE USUARIO FOR ADMIN, RETORNA LINK PARA CADASTRO DE PRODUTO --}}
-                    @if (Auth()->user() == 'isAdmin')
+                    @if (Auth()->user()->isAdmin())
 
-                        {{-- LINKS PARA PRODUTOS --}}
+                        {{-- LINK PARA PRODUTOS --}}
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{ route('product.index') }}">Produtos</a>
                         </li>
