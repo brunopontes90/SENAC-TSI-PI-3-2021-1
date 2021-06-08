@@ -6,7 +6,9 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        min-height: 400px:
+        border-radius: 10px;
+        height: 400px;
+
     }
     #console{
         border: solid 3px #FF8000;
@@ -15,12 +17,17 @@
         height: 200px;
         width: 200px:
     }
+
+    #main{
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px 0px #6E6E6E;
+    }
 </style>
 @endsection
 
 @section('content')
 
-<div class="col-lg-12 col-md-6 col-sm-3 text-center" style="box-shadow: 0px 5px 10px 0px #6E6E6E">
+<div class="col-lg-12 col-md-12 col-sm-12 text-center" id="main">
     <section id="banner" class="d-flex align-items-center p-4">
         <div class="text-white">
             <span class="h2 d-block text-capitalize mb-0">Toda loja em</span>

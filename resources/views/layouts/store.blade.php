@@ -1,6 +1,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8455a3d02b.js" crossoringin="anonymous"></script>
+    <title>Loja dos Gamess</title>
+    <link rel="icon" href="https://w7.pngwing.com/pngs/959/796/png-transparent-google-play-games-android-play-icon-game-rectangle-logo-thumbnail.png">
     @yield('css')
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -78,7 +80,9 @@
                         </form>
                     @else
                         {{-- SE NÃO TIVER LOGADO, OPÇÃO DE REGISTRAR OU LOGAR --}}
-                        <a class="nav-link" href="{{ route('register') }}">Registrar</a>
+                        <a class="nav-link" href="{{ route('register') }}">
+                            <i class="fas fa-user-plus"></i>
+                        </a>
                         {{-- ICON LOGIN --}}
                         <a class="nav-link" href="{{ route('login') }}">
                             <i class="fas fa-user"></i>
@@ -107,10 +111,10 @@
             <div class="col-6">
                 <h2 class="h4 text-uppercase fw-bold mt-2">Localização:</h2>
                 <address>
-                    <p>Av. Eng. Eusébio Stevaux, 823</p>
-                    <p>São Paulo - SP</p>
-                    <p>CEP: 04696-000</p>
-                    <p>Telefone: (11) 5682-7300</p>
+                    Av. Eng. Eusébio Stevaux, 823<br>
+                    São Paulo - SP<br>
+                    CEP: 04696-000<br>
+                    Telefone: (11) 5682-7300<br>
                 </address>
             </div>
             <div class="col-6">

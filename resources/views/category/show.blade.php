@@ -10,7 +10,7 @@
         width: 200px:
     }
 </style>
-<section class="col-lg-12 col-md-6 col-sm-3 text-center" style="box-shadow: 0px 5px 10px 0px #6E6E6E">
+<section class="col-lg-12 col-md-12 col-sm-12 text-center" style="box-shadow: 0px 5px 10px 0px #6E6E6E">
     <div class="row py-5">
         <div class=" text-center my-2">
             <h2 class="text-muted fw-bold text-uppercase">{{ $category->name}}</h2>
