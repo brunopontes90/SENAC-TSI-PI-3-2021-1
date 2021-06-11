@@ -16,17 +16,6 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
 
-                    {{-- SE USUARIO FOR ADMIN, RETORNA LINK PARA CADASTRO DE PRODUTO --}}
-                    @if (Auth()->user()->isAdmin())
-
-                        {{-- LINK PARA PRODUTOS --}}
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('product.index') }}">Produtos</a>
-                        </li>
-
-                    @endif
-
-
                     {{-- LINKS PARA CATEGORIAS --}}
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuCategoria" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categoria</a>
